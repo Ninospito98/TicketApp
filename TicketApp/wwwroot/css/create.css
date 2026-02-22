@@ -1,0 +1,87 @@
+﻿.create-section {
+    background-color: #0a0a0a;
+    min-height: 100vh;
+    padding: 80px 20px;
+    color: white;
+}
+
+.create-wrapper {
+    width: 600px;
+    margin: 0 auto;
+}
+
+.create-title {
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    color: white;
+}
+
+.form-group {
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,0.6);
+}
+
+.form-group .form-control {
+    background-color: #1a1a1a;
+    border: 1px solid rgba(255,255,255,0.1);
+    color: orange;
+    padding: 12px 16px;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group .form-control:focus {
+    outline: none;
+    border-color: orange;
+    background-color: #1a1a1a;
+    color: white;
+    box-shadow: none;
+}
+.form-group textarea.form-control {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-group select.form-control option {
+    background-color: #1a1a1a;
+    color: white;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: orange;
+    color: black;
+    font-weight: 700;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: darkorange;
+}
+
+.text-danger {
+    color: #ff4444;
+    font-size: 0.8rem;
+}

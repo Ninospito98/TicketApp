@@ -1,0 +1,50 @@
+﻿@page
+@model LoginModel
+@{
+    ViewData["Title"] = "Log in";
+}
+
+<section class="auth-section">
+    <div class="auth-wrapper">
+        <h1 class="auth-title">Welcome Back</h1>
+        <p class="auth-subtitle">Log in to your account</p>
+
+        <form id="account" method="post">
+            <div asp-validation-summary="ModelOnly" class="error-msg" role="alert"></div>
+
+            <div class="form-group">
+                <label asp-for="Input.Email">Email</label>
+                <input asp-for="Input.Email" class="form-control" autocomplete="username" placeholder="name@example.com" />
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Input.Password">Password</label>
+                <input asp-for="Input.Password" class="form-control" autocomplete="current-password" placeholder="Password" />
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+
+            <div class="form-check-group">
+                <label>
+                    <input class="form-check-input" asp-for="Input.RememberMe" />
+                    @Html.DisplayNameFor(m => m.Input.RememberMe)
+                </label>
+            </div>
+
+            <button id="login-submit" type="submit" class="submit-btn">Log In</button>
+
+            <div class="auth-links">
+                <a asp-page="./ForgotPassword">Forgot your password?</a>
+                <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Create an account</a>
+            </div>
+        </form>
+    </div>
+</section>
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/auth.css" />
+}
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,168 @@
+﻿.checkout-section {
+    background-color: #0a0a0a;
+    min-height: 100vh;
+    padding: 80px 20px;
+    color: white;
+}
+
+.checkout-wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.checkout-title {
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+}
+
+.error-msg {
+    background-color: #ff444422;
+    border: 1px solid #ff4444;
+    color: #ff4444;
+    padding: 12px 16px;
+    border-radius: 4px;
+    margin-bottom: 24px;
+    font-size: 0.9rem;
+}
+
+.checkout-event {
+    display: flex;
+    gap: 24px;
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+    .checkout-event img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        flex-shrink: 0;
+    }
+
+.checkout-event-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.checkout-category {
+    background-color: orange;
+    color: black;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    width: fit-content;
+}
+
+.checkout-event-info h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-top: 4px;
+}
+
+.checkout-subtitle {
+    color: rgba(255,255,255,0.6);
+    font-size: 0.9rem;
+}
+
+.checkout-date {
+    color: orange;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.checkout-venue {
+    color: rgba(255,255,255,0.5);
+    font-size: 0.85rem;
+}
+
+.checkout-tickets-left {
+    color: rgba(255,255,255,0.4);
+    font-size: 0.8rem;
+    margin-top: auto;
+}
+
+.checkout-form {
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    padding: 30px;
+}
+
+.form-group {
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+    .form-group label {
+        font-size: 0.85rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: rgba(255,255,255,0.6);
+    }
+
+    .form-group .form-control {
+        background-color: #0a0a0a;
+        border: 1px solid rgba(255,255,255,0.1);
+        color: white;
+        padding: 12px 16px;
+        border-radius: 4px;
+        font-size: 0.95rem;
+    }
+
+        .form-group .form-control:focus {
+            outline: none;
+            border-color: orange;
+            box-shadow: none;
+        }
+
+.checkout-summary {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px;
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    color: rgba(255,255,255,0.6);
+    font-size: 0.9rem;
+}
+
+    .summary-row.total {
+        color: white;
+        font-weight: 700;
+        font-size: 1.1rem;
+    }
+
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: orange;
+    color: black;
+    font-weight: 700;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+}
+
+    .submit-btn:hover {
+        background-color: darkorange;
+    }

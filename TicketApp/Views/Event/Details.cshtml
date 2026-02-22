@@ -1,0 +1,37 @@
+﻿@model TicketApp.Models.Event
+
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<section class="eventDetails-section">
+    <div class="eventDetails-wrapper">
+        <div class="event-img-wrapper">
+            <img src="@Model.ImageUrl" alt="@Model.Title" />
+        </div>
+
+        <div class="first-container">
+            <div class="left-info">
+                <span class="event-title">@Model.Title</span>
+                <span class="event-subtitle">@Model.Subtitle</span>
+            </div>
+            <div class="right-info">
+                <a asp-controller="Booking" asp-action="Checkout" asp-route-eventId="@Model.Id" class="btn btn-primary">Buy Ticket</a>
+                <span class="event-tickets">@Model.TicketsRemaining tickets left</span>
+            </div>
+        </div>
+
+        <div class="second-container">
+            <p>@Model.Description</p>
+        </div>
+
+        <div class="last-container">
+            <p class="event-date"><span>Date</span>@Model.Date.ToString("dd MMM yyyy, HH:mm")</p>
+            <p class="event-venue"><span>Venue</span>@Model.Venue</p>
+        </div>
+    </div>
+</section>
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/eventDetails.css" />
+}

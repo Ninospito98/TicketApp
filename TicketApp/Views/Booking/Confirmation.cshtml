@@ -1,0 +1,58 @@
+﻿@model TicketApp.Models.Booking
+
+@{
+    ViewData["Title"] = "Booking Confirmed";
+}
+
+<section class="confirmation-section">
+    <div class="confirmation-wrapper">
+
+        <div class="confirmation-header">
+            <span class="confirmation-icon">✓</span>
+            <h1>Booking Confirmed</h1>
+            <p>Your tickets are ready. Show the QR code at the entrance.</p>
+        </div>
+
+        <div class="confirmation-body">
+            <div class="confirmation-event">
+                <img src="@Model.Event.ImageUrl" alt="@Model.Event.Title" />
+                <div class="confirmation-event-info">
+                    <span class="confirmation-category">@Model.Event.Category</span>
+                    <h2>@Model.Event.Title</h2>
+                    <p class="confirmation-subtitle">@Model.Event.Subtitle</p>
+                    <p class="confirmation-date">@Model.Event.Date.ToString("dd MMM yyyy, HH:mm")</p>
+                    <p class="confirmation-venue">@Model.Event.Venue</p>
+                    <div class="confirmation-details">
+                        <div class="detail-row">
+                            <span>Tickets</span>
+                            <span>@Model.Quantity</span>
+                        </div>
+                        <div class="detail-row">
+                            <span>Total Paid</span>
+                            <span>@Model.TotalPrice SEK</span>
+                        </div>
+                        <div class="detail-row">
+                            <span>Ticket Code</span>
+                            <span class="ticket-code">@Model.TicketCode</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="qr-wrapper">
+                <p>Scan at entrance</p>
+                <img src="data:image/png;base64,@ViewBag.QrCode" alt="QR Code" class="qr-code" />
+            </div>
+        </div>
+
+        <div class="confirmation-actions">
+            <a asp-controller="Booking" asp-action="MyTickets" class="submit-btn">My Tickets</a>
+            <a asp-controller="Event" asp-action="Index" class="outline-btn">Browse Events</a>
+        </div>
+
+    </div>
+</section>
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/confirmation.css" />
+}

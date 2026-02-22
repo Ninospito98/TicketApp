@@ -1,0 +1,64 @@
+﻿@model List<TicketApp.Models.Booking>
+
+@{
+    ViewData["Title"] = "My Tickets";
+}
+
+<section class="tickets-section">
+    <div class="tickets-wrapper">
+        <h1 class="tickets-title">My Tickets</h1>
+
+        @if (!Model.Any())
+        {
+            <div class="no-tickets">
+                <p>You have no tickets yet.</p>
+                <a asp-controller="Event" asp-action="Index" class="submit-btn">Browse Events</a>
+            </div>
+        }
+        else
+        {
+            <div class="tickets-grid">
+                @foreach (var booking in Model)
+                {
+                    <div class="ticket-card @(booking.IsUsed ? "used" : "")">
+                        <div class="ticket-img">
+                            <img src="@booking.Event.ImageUrl" alt="@booking.Event.Title" />
+                            @if (booking.IsUsed)
+                            {
+                                <span class="used-badge">Used</span>
+                            }
+                            else
+                            {
+                                <span class="valid-badge">Valid</span>
+                            }
+                        </div>
+                        <div class="ticket-info">
+                            <span class="ticket-category">@booking.Event.Category</span>
+                            <h2>@booking.Event.Title</h2>
+                            <p class="ticket-subtitle">@booking.Event.Subtitle</p>
+                            <p class="ticket-date">@booking.Event.Date.ToString("dd MMM yyyy, HH:mm")</p>
+                            <p class="ticket-venue">@booking.Event.Venue</p>
+                            <div class="ticket-footer">
+                                <div class="ticket-detail">
+                                    <span>Tickets</span>
+                                    <span>@booking.Quantity</span>
+                                </div>
+                                <div class="ticket-detail">
+                                    <span>Total</span>
+                                    <span>@booking.TotalPrice SEK</span>
+                                </div>
+                            </div>
+                            <a asp-controller="Booking" asp-action="Confirmation" asp-route-id="@booking.Id" class="view-ticket-btn">
+                                View Ticket & QR
+                            </a>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+</section>
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/mytickets.css" />
+}

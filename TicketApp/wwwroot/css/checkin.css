@@ -1,0 +1,218 @@
+﻿.checkin-section {
+    background-color: #0a0a0a;
+    min-height: 100vh;
+    padding: 80px 20px;
+    color: white;
+}
+
+.checkin-wrapper {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.checkin-title {
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.checkin-subtitle {
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: -20px;
+}
+
+#reader {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid orange;
+}
+
+.manual-entry {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+    .manual-entry p {
+        color: rgba(255,255,255,0.4);
+        font-size: 0.85rem;
+    }
+
+.manual-form {
+    display: flex;
+    gap: 10px;
+}
+
+.form-control {
+    flex: 1;
+    background-color: #1a1a1a;
+    border: 1px solid rgba(255,255,255,0.1);
+    color: white;
+    padding: 12px 16px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+    .form-control:focus {
+        outline: none;
+        border-color: orange;
+    }
+
+.submit-btn {
+    padding: 12px 20px;
+    background-color: orange;
+    color: black;
+    font-weight: 700;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+}
+
+    .submit-btn:hover {
+        background-color: darkorange;
+    }
+
+.verify-card {
+    width: 100%;
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+    .verify-card.valid {
+        border: 1px solid #22c55e;
+    }
+
+    .verify-card.used {
+        border: 1px solid #ff4444;
+    }
+
+.verify-status {
+    padding: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.status-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 1.8rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .status-icon.green {
+        background-color: #22c55e;
+        color: white;
+    }
+
+    .status-icon.red {
+        background-color: #ff4444;
+        color: white;
+    }
+
+.verify-status h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.verify-status p {
+    color: rgba(255,255,255,0.5);
+    font-size: 0.9rem;
+}
+
+.verify-details {
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.verify-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+}
+
+    .verify-row span:first-child {
+        color: rgba(255,255,255,0.4);
+    }
+
+    .verify-row span:last-child {
+        color: white;
+        font-weight: 500;
+    }
+
+.ticket-code {
+    font-family: monospace;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.4) !important;
+}
+
+.checkin-btn {
+    margin: 20px 30px;
+    padding: 14px;
+    background-color: #22c55e;
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+    width: calc(100% - 60px);
+}
+
+    .checkin-btn:hover {
+        background-color: #16a34a;
+    }
+
+.scan-again-btn {
+    margin: 0 30px 20px 30px;
+    padding: 12px;
+    background-color: transparent;
+    color: rgba(255,255,255,0.5);
+    font-weight: 600;
+    font-size: 0.85rem;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+}
+
+    .scan-again-btn:hover {
+        border-color: white;
+        color: white;
+    }

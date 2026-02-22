@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Check In Successful";
+}
+
+<section class="checkin-section">
+    <div class="checkin-wrapper">
+        <div class="verify-card valid">
+            <div class="verify-status">
+                <span class="status-icon green">✓</span>
+                <h2>Checked In Successfully</h2>
+                <p>The ticket has been marked as used</p>
+            </div>
+            <a asp-action="Index" class="scan-again-btn">Scan Another</a>
+        </div>
+    </div>
+</section>
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/checkin.css" />
+}

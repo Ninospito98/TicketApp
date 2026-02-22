@@ -1,0 +1,81 @@
+﻿@model TicketApp.Models.Event
+
+@{
+    ViewData["Title"] = "Create Event";
+}
+
+<section class="create-section">
+    <div class="create-wrapper">
+        <h1 class="create-title">Create Event</h1>
+
+        <form asp-action="Create" method="post">
+            <div class="form-group">
+                <label asp-for="Title">Title</label>
+                <input asp-for="Title" class="form-control" placeholder="Event title" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Subtitle">Subtitle</label>
+                <input asp-for="Subtitle" class="form-control" placeholder="Artist, performers, teams..." />
+                <span asp-validation-for="Subtitle" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Category">Category</label>
+                <select asp-for="Category" class="form-control">
+                    <option value="">-- Select Category --</option>
+                    <option value="Concert">Concert</option>
+                    <option value="Sports">Sports</option>
+                    <option value="Comedy">Comedy</option>
+                    <option value="Gaming">Gaming</option>
+                    <option value="Theatre">Theatre</option>
+                    <option value="Other">Other</option>
+                </select>
+                <span asp-validation-for="Category" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Date">Date</label>
+                <input asp-for="Date" type="datetime-local" class="form-control" />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Venue">Venue</label>
+                <input asp-for="Venue" class="form-control" placeholder="Venue name and city" />
+                <span asp-validation-for="Venue" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Price">Price (SEK)</label>
+                <input asp-for="Price" class="form-control" placeholder="0" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Description">Description</label>
+                <textarea asp-for="Description" class="form-control" rows="5" placeholder="Full event description"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ImageUrl">Image URL</label>
+                <input asp-for="ImageUrl" class="form-control" placeholder="https://..." />
+                <span asp-validation-for="ImageUrl" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="TotalTickets">Total Tickets</label>
+                <input asp-for="TotalTickets" class="form-control" placeholder="1000" />
+                <span asp-validation-for="TotalTickets" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="submit-btn">Create Event</button>
+        </form>
+    </div>
+</section>
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/create.css" />
+}

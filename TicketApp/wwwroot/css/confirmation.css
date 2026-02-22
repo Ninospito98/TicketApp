@@ -1,0 +1,200 @@
+﻿.confirmation-section {
+    background-color: #0a0a0a;
+    min-height: 100vh;
+    padding: 80px 20px;
+    color: white;
+}
+
+.confirmation-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.confirmation-header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.confirmation-icon {
+    width: 60px;
+    height: 60px;
+    background-color: orange;
+    color: black;
+    font-size: 1.8rem;
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.confirmation-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.confirmation-header p {
+    color: rgba(255,255,255,0.5);
+    font-size: 0.95rem;
+}
+
+.confirmation-body {
+    display: flex;
+    gap: 30px;
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.confirmation-event {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+    .confirmation-event img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+.confirmation-event-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.confirmation-category {
+    background-color: orange;
+    color: black;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    width: fit-content;
+}
+
+.confirmation-event-info h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: 4px;
+}
+
+.confirmation-subtitle {
+    color: rgba(255,255,255,0.6);
+    font-size: 0.9rem;
+}
+
+.confirmation-date {
+    color: orange;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.confirmation-venue {
+    color: rgba(255,255,255,0.5);
+    font-size: 0.85rem;
+}
+
+.confirmation-details {
+    margin-top: 16px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.6);
+}
+
+.ticket-code {
+    font-family: monospace;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.4);
+}
+
+.qr-wrapper {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    border-left: 1px solid rgba(255,255,255,0.05);
+}
+
+    .qr-wrapper p {
+        color: rgba(255,255,255,0.5);
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+.qr-code {
+    width: 180px;
+    height: 180px;
+    border-radius: 8px;
+}
+
+.confirmation-actions {
+    display: flex;
+    gap: 16px;
+}
+
+.submit-btn {
+    flex: 1;
+    padding: 14px;
+    background-color: orange;
+    color: black;
+    font-weight: 700;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+}
+
+    .submit-btn:hover {
+        background-color: darkorange;
+        color: black;
+    }
+
+.outline-btn {
+    flex: 1;
+    padding: 14px;
+    background-color: transparent;
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+}
+
+    .outline-btn:hover {
+        border-color: white;
+    }

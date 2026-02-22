@@ -1,0 +1,35 @@
+﻿@model List<TicketApp.Models.Event>
+
+@{
+    ViewData["Title"] = "Events";
+}
+
+<section class="events-section">
+    <h1 class="events-title">Upcoming Events</h1>
+
+    <div class="events-grid">
+        @foreach (var ev in Model)
+        {
+            <a asp-action="Details" asp-route-id="@ev.Id" class="event-card">
+                <div class="event-img-wrapper">
+                    <img src="@ev.ImageUrl" alt="@ev.Title" />
+                    <span class="event-category">@ev.Category</span>
+                </div>
+                <div class="event-info">
+                    <h2>@ev.Title</h2>
+                    <p class="event-subtitle">@ev.Subtitle</p>
+                    <p class="event-date">@ev.Date.ToString("dd MMM yyyy, HH:mm")</p>
+                    <p class="event-venue">@ev.Venue</p>
+                    <div class="event-footer">
+                        <span class="event-price">@ev.Price SEK</span>
+                        <span class="event-tickets">@ev.TicketsRemaining tickets left</span>
+                    </div>
+                </div>
+            </a>
+        }
+    </div>
+</section>
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/events.css" />
+}

@@ -1,0 +1,130 @@
+.main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    height: 64px;
+    background-color: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.nav-brand {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.nav-brand:hover {
+    color: orange;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.nav-links a {
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: white;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.nav-right ul {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    flex-direction: row;
+}
+
+.nav-right li {
+    display: flex;
+    align-items: center;
+}
+
+.nav-right form {
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+    /* Override bootstrap login partial styles */
+.nav-right a {
+    color: rgba(255,255,255,0.6) !important;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.nav-right a:hover {
+    color: white !important;
+}
+
+.nav-right .btn-link {
+    color: rgba(255,255,255,0.6) !important;
+    font-size: 0.9rem;
+    padding: 0;
+    border: none;
+    background: none;
+    transition: color 0.3s ease;
+}
+
+.nav-right .btn-link:hover {
+    color: white !important;
+}
+
+    /* Register button styled as orange pill */
+.nav-right a[href*="Register"] {
+    background-color: orange !important;
+    color: black !important;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-right a[href*="Register"]:hover {
+    background-color: darkorange !important;
+    color: black !important;
+}
+/* Footer */
+.footer {
+    background-color: #0a0a0a;
+    color: rgba(255,255,255,0.3) !important;
+    border-top: 1px solid rgba(255,255,255,0.08) !important;
+    padding: 20px 0;
+    font-size: 0.85rem;
+}

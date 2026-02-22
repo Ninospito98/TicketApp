@@ -1,0 +1,65 @@
+﻿@model TicketApp.Models.Booking
+
+@{
+    ViewData["Title"] = "Verify Ticket";
+}
+
+<section class="checkin-section">
+    <div class="checkin-wrapper">
+        <h1 class="checkin-title">Ticket Verification</h1>
+
+        <div class="verify-card @(Model.IsUsed ? "used" : "valid")">
+            <div class="verify-status">
+                @if (Model.IsUsed)
+                {
+                    <span class="status-icon red">✕</span>
+                    <h2>Already Used</h2>
+                    <p>This ticket was used at @Model.UsedAt?.ToString("dd MMM yyyy, HH:mm")</p>
+                }
+                else
+                {
+                    <span class="status-icon green">✓</span>
+                    <h2>Valid Ticket</h2>
+                    <p>This ticket is valid and ready to be checked in</p>
+                }
+            </div>
+
+            <div class="verify-details">
+                <div class="verify-row">
+                    <span>Event</span>
+                    <span>@Model.Event.Title</span>
+                </div>
+                <div class="verify-row">
+                    <span>Date</span>
+                    <span>@Model.Event.Date.ToString("dd MMM yyyy, HH:mm")</span>
+                </div>
+                <div class="verify-row">
+                    <span>Venue</span>
+                    <span>@Model.Event.Venue</span>
+                </div>
+                <div class="verify-row">
+                    <span>Tickets</span>
+                    <span>@Model.Quantity</span>
+                </div>
+                <div class="verify-row">
+                    <span>Ticket Code</span>
+                    <span class="ticket-code">@Model.TicketCode</span>
+                </div>
+            </div>
+
+            @if (!Model.IsUsed)
+            {
+                <form asp-action="MarkUsed" method="post">
+                    <input type="hidden" name="ticketCode" value="@Model.TicketCode" />
+                    <button type="submit" class="checkin-btn">Check In</button>
+                </form>
+            }
+
+            <a asp-action="Index" class="scan-again-btn">Scan Another</a>
+        </div>
+    </div>
+</section>
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/checkin.css" />
+}

@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Scan Ticket";
+}
+
+<section class="checkin-section">
+    <div class="checkin-wrapper">
+        <h1 class="checkin-title">Scan Ticket</h1>
+        <p class="checkin-subtitle">Point the camera at the QR code on the ticket</p>
+
+        <div id="reader"></div>
+
+        <div class="manual-entry">
+            <p>Or enter ticket code manually</p>
+            <div class="manual-form">
+                <input type="text" id="manualCode" class="form-control" placeholder="Enter ticket code..." />
+                <button onclick="submitManual()" class="submit-btn">Verify</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/checkin.css" />
+}
+
+@section Scripts {
+    <script src="https://unpkg.com/html5-qrcode"></script>
+    <script>
+        const html5QrCode = new Html5Qrcode("reader");
+
+        html5QrCode.start(
+            { facingMode: "environment" },
+            { fps: 10, qrbox: { width: 250, height: 250 } },
+            (decodedText) => {
+                html5QrCode.stop();
+                window.location.href = `/CheckIn/Verify?code=${decodedText}`;
+            },
+            (error) => {}
+        );
+
+        function submitManual() {
+            const code = document.getElementById('manualCode').value.trim();
+            if (code) {
+                window.location.href = `/CheckIn/Verify?code=${code}`;
+            }
+        }
+    </script>
+}

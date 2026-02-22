@@ -1,0 +1,73 @@
+﻿@model TicketApp.Models.Event
+
+@{
+    ViewData["Title"] = "Checkout";
+}
+
+<section class="checkout-section">
+    <div class="checkout-wrapper">
+        <h1 class="checkout-title">Checkout</h1>
+
+        @if (TempData["Error"] != null)
+        {
+            <div class="error-msg">@TempData["Error"]</div>
+        }
+
+        <div class="checkout-event">
+            <img src="@Model.ImageUrl" alt="@Model.Title" />
+            <div class="checkout-event-info">
+                <span class="checkout-category">@Model.Category</span>
+                <h2>@Model.Title</h2>
+                <p class="checkout-subtitle">@Model.Subtitle</p>
+                <p class="checkout-date">@Model.Date.ToString("dd MMM yyyy, HH:mm")</p>
+                <p class="checkout-venue">@Model.Venue</p>
+                <p class="checkout-tickets-left">@Model.TicketsRemaining tickets remaining</p>
+            </div>
+        </div>
+
+        <div class="checkout-form">
+            <form asp-action="Checkout" method="post">
+                <input type="hidden" name="eventId" value="@Model.Id" />
+
+                <div class="form-group">
+                    <label>Number of Tickets</label>
+                    <select name="quantity" class="form-control" id="quantitySelect">
+                        @for (int i = 1; i <= Math.Min(10, Model.TicketsRemaining); i++)
+                        {
+                            <option value="@i">@i</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="checkout-summary">
+                    <div class="summary-row">
+                        <span>Price per ticket</span>
+                        <span>@Model.Price SEK</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total</span>
+                        <span id="totalPrice">@Model.Price SEK</span>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">Confirm Booking</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/checkout.css" />
+}
+
+@section Scripts {
+    <script>
+        const price = @Model.Price;
+        const select = document.getElementById('quantitySelect');
+        const total = document.getElementById('totalPrice');
+
+        select.addEventListener('change', function () {
+            total.textContent = (price * this.value).toFixed(0) + ' SEK';
+        });
+    </script>
+}

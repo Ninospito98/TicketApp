@@ -1,0 +1,54 @@
+﻿@model List<TicketApp.Models.Booking>
+
+@{
+    ViewData["Title"] = "Manage Bookings";
+}
+
+<section class="admin-section">
+    <div class="admin-wrapper">
+        <div class="admin-header">
+            <h1 class="admin-title">Bookings</h1>
+        </div>
+
+        <table class="admin-table">
+            <thead>
+                <tr>
+                    <th>User</th>
+                    <th>Event</th>
+                    <th>Date</th>
+                    <th>Tickets</th>
+                    <th>Total</th>
+                    <th>Status</th>
+                    <th>Booked At</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var booking in Model)
+                {
+                    <tr>
+                        <td>@booking.User.FullName</td>
+                        <td>@booking.Event.Title</td>
+                        <td>@booking.Event.Date.ToString("dd MMM yyyy")</td>
+                        <td>@booking.Quantity</td>
+                        <td>@booking.TotalPrice SEK</td>
+                        <td>
+                            @if (booking.IsUsed)
+                            {
+                                <span class="badge-used">Used</span>
+                            }
+                            else
+                            {
+                                <span class="badge-valid">Valid</span>
+                            }
+                        </td>
+                        <td>@booking.CreatedAt.ToString("dd MMM yyyy, HH:mm")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</section>
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/admin.css" />
+}
